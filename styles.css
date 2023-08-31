@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 
@@ -32,14 +32,13 @@ body {
     opacity: 100;
     transform: translateY(20px);
 
-    background: linear-gradient(to right, #0C0032 0%, #000000 100%); 
+    background: linear-gradient(to right, #0C0032 0%, #07001d 100%); 
     /* Set the desired background color */
     border-radius: 20px;
     /* Adjust the border radius for curved edges */
     padding: 20px;
     /* Add padding to the card content for spacing */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Add a subtle shadow */
+    box-shadow: 0px 1px 2px #66FCF1; /* Add the drop shadow */
 
     animation: fadeSlide 1s ease forwards;
 }
@@ -66,19 +65,37 @@ body {
     color: #C5C6C7;
 }
 
+.background-sb{
+    
+}
 .slide-box {
-    position: absolute;
+    background: linear-gradient(to right, #5f4cc9 0%, #fcfcfc 100%); 
+    opacity: 100;
+    /* Set the desired background color */
+    border-radius: 20px;
+    /* Adjust the border radius for curved edges */
+    padding: 20px;
+    /* Add padding to the card content for spacing */
+    color: #C5C6C7;
+
+
+    animation: fadeSlide 1s ease forwards;
     top: 0;
-    position: absolute;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    animation: slide-in 0.5s forwards;
+    right: 0;
+    animation: skrrt 3s forwards;
     background-color: #f3f3f3;
     /* Box background color */
-    animation: slide-in 0.6s forwards;
     /* Add a sliding animation */
 }
+
+/* code for slide-box that makes the slide-box slide to the right from inside of the card */
+
+
+@keyframes skrrt {
+    to {
+      right: 100;
+    }
+  }
 
 
 .content-of-sb {
