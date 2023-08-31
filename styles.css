@@ -1,3 +1,102 @@
 /* Your Styles Here */
-body{
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.background-only {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.863)), url(images/gt-background.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+}
+
+.card {
+    box-shadow: 0px 0px 10px #45A29E;
+    opacity: 100;
+    transform: translateY(20px);
+
+    background: linear-gradient(to right, #0C0032 0%, #000000 100%); 
+    /* Set the desired background color */
+    border-radius: 20px;
+    /* Adjust the border radius for curved edges */
+    padding: 20px;
+    /* Add padding to the card content for spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+
+    animation: fadeSlide 1s ease forwards;
+}
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.card-title {
+    color: #66FCF1;
+    display: inline-block
+}
+
+.card-content {
+    color: #C5C6C7;
+}
+
+.slide-box {
+    position: absolute;
+    top: 0;
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    animation: slide-in 0.5s forwards;
+    background-color: #f3f3f3;
+    /* Box background color */
+    animation: slide-in 0.6s forwards;
+    /* Add a sliding animation */
+}
+
+
+.content-of-sb {
+    opacity: 0;
+    /* Initially hide content */
+    padding: 20px;
+    animation: fade-in 1s ease-in-out 0.8s forwards;
+    /* Add a fade-in animation */
+}
+
+@keyframes slide-in {
+    to {
+        right: 0;
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
 }
