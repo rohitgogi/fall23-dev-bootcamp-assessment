@@ -18,6 +18,8 @@ body {
 }
 
 .background-only {
+    /*make sure the background is behind the card and slide box*/
+    z-index: -2;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -28,6 +30,7 @@ body {
 }
 
 .card {
+    position: relative;
     box-shadow: 0px 0px 10px #45A29E;
     opacity: 100;
     transform: translateY(20px);
@@ -40,7 +43,6 @@ body {
     border-style: solid;
     padding: 20px;
     /* Add padding to the card content for spacing */
-    box-shadow: 0px 1px 2px #66FCF1; /* Add the drop shadow */
 
     animation: fadeSlide 1s ease forwards;
 }
@@ -67,53 +69,36 @@ body {
     color: #C5C6C7;
 }
 
-.background-sb{
-    
-}
 .slide-box {
-    background: linear-gradient(to right, #5f4cc9 0%, #fcfcfc 100%); 
+    /* make the .slide-box a child of the .card */
+
+    position: absolute; /* Position the .slide-box inside the .card */
+    /* Make the .slide-box hide behind the .card */
+    z-index: -1;
+    bottom: 0; /* Initially hide at the bottom of the .card */
+    left: 0;
+    transform: translateY(100%); /* Initially off-screen */
+
+    box-shadow: 0px 0px 10px #45A29E;
     opacity: 100;
+
+
+    background: linear-gradient(to right, #0C0032 0%, #07001d 100%); 
     /* Set the desired background color */
-    border-image: linear-gradient(270deg,#853AFF, #57A5A9) 30;
+    /* Adjust the border radius for curved edges */
+    border-image: linear-gradient(270deg,#C3073F, #950740) 30;
     border-width: 1px;
     border-style: solid;
-    /* Adjust the border radius for curved edges */
     padding: 20px;
     /* Add padding to the card content for spacing */
+    transform: translateX(0);
+    /* Adjust other styles as needed */
+    animation: slideOut 1s ease-in-out 1.5s forwards;
+}
+
+.slidebox-content {
     color: #C5C6C7;
-
-
-    animation: fadeSlide 1s ease forwards;
-    top: 0;
-    right: 0;
-    animation: skrrt 3s forwards;
-    background-color: #f3f3f3;
-    /* Box background color */
-    /* Add a sliding animation */
-}
-
-/* code for slide-box that makes the slide-box slide to the right from inside of the card */
-
-
-@keyframes skrrt {
-    to {
-      right: 100;
-    }
-  }
-
-
-.content-of-sb {
-    opacity: 0;
-    /* Initially hide content */
-    padding: 20px;
-    animation: fade-in 1s ease-in-out 0.8s forwards;
-    /* Add a fade-in animation */
-}
-
-@keyframes slide-in {
-    to {
-        right: 0;
-    }
+    padding: 8px;
 }
 
 @keyframes fade-in {
@@ -121,3 +106,13 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes slideOut {
+    from {
+        /* Change translateX values */
+        transform: translateX(-100%);
+    }
+    to {
+        /* Change translateX values */
+        transform: translateX(0);
+    }
