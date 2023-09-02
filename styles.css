@@ -111,7 +111,7 @@ body {
     }
     to {
         /* Change translateX values */
-        transform: translateX(70%);
+        transform: translateX(80%);
         opacity: 100%;
     }
 }
